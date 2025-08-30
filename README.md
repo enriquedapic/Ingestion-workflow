@@ -1,14 +1,20 @@
 # Ingestion-workflow
-n8n/
-For ingestion, I will use n8n and DuckDB. DuckDB is an in-memory analytical processing database (OLAP) that is perfect for this type of quick analysis task, as it does not require a separate server and can be used directly with files.
+n8n
+ For ingestion, I will use n8n and DuckDB. DuckDB is an in-memory analytical processing database (OLAP) that is perfect for this type of quick analysis task, as it does not require a separate server and can be used directly with files.
 - For data ingestion 
 - in-memory analytical processing database (OLAP). 
+
 Node 'HTTP Request': Downloads the ads_spend.csv file from the Google Drive link.  
+
 Node 'Read Binary File': Reads the downloaded CSV file.  
+
 Node 'CSV to JSON': Converts the CSV data into JSON format.  
+
 Node 'DuckDB': This is the key node. Connects to a DuckDB database.  
+
  Action: Execute SQL. 
-SQL/
+
+SQL
 CREATE OR REPLACE TABLE ads_spend_raw (
             date DATE,
             platform VARCHAR,
